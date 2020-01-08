@@ -17,6 +17,17 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(@Valid String name, String phone) {
+        this.name = name;
+        this.phone = phone;
+    }
+
+    public Customer(String id, @Valid String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
+
     public String getId() {
         return id;
     }
