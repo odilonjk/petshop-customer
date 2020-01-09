@@ -4,6 +4,7 @@ package com.odilonjk.petshopcustomer.entities;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.Valid;
+import java.util.Objects;
 
 public class Customer {
 
@@ -59,5 +60,20 @@ public class Customer {
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Customer)) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(id, customer.id) &&
+                Objects.equals(name, customer.name) &&
+                Objects.equals(phone, customer.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, phone);
     }
 }
