@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CustomerService {
@@ -27,7 +28,7 @@ public class CustomerService {
     @Autowired
     private CustomerSearchPageRepository searchPageRepository;
 
-    public Customer findById(String id) throws CustomerNotFoundException {
+    public Customer findById(UUID id) throws CustomerNotFoundException {
         return customerRepository.findById(id)
                 .orElseThrow(() -> new CustomerNotFoundException("Customer not found with id: " + id));
     }

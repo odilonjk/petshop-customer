@@ -5,7 +5,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface CustomerSearchPageRepository extends PagingAndSortingRepository<Customer,Integer> {
+import java.util.UUID;
+
+public interface CustomerSearchPageRepository extends PagingAndSortingRepository<Customer, UUID> {
 
     Page<Customer> findByName(String name, Pageable pageable);
 }

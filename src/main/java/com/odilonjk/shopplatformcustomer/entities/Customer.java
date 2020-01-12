@@ -1,19 +1,30 @@
 package com.odilonjk.shopplatformcustomer.entities;
 
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.Id;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
 
 import javax.validation.Valid;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Customer {
 
     @Id
-    public String id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column(name = "id", updatable = false, nullable = false)
+    private UUID id;
 
     @Valid
-    public String name;
-    public String phone;
+    private String name;
+    private String phone;
 
     public Customer() {
     }
@@ -23,17 +34,17 @@ public class Customer {
         this.phone = phone;
     }
 
-    public Customer(String id, @Valid String name, String phone) {
+    public Customer(UUID id, @Valid String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

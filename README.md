@@ -9,5 +9,8 @@
 * Spring 2
 * Gradle 6
 
-## This project depends
+### This project depends
 * Database mongoDB
+---
+### Documentation and features
+Swagger documentation can be found at [url http://localhost:8080/swagger-ui.html#/](http://localhost:8080/swagger-ui.html#/)
