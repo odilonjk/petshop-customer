@@ -4,7 +4,12 @@ import com.odilonjk.shopplatformcustomer.entities.Customer;
 import com.odilonjk.shopplatformcustomer.exceptions.CustomerNotFoundException;
 import com.odilonjk.shopplatformcustomer.exceptions.IncompleteCustomerException;
 import com.odilonjk.shopplatformcustomer.repositories.CustomerRepository;
+import com.odilonjk.shopplatformcustomer.repositories.CustomerSearchPageRepository;
+import com.odilonjk.shopplatformcustomer.repositories.CustomerSearchSliceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -15,6 +20,12 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private CustomerSearchSliceRepository searchRepository;
+
+    @Autowired
+    private CustomerSearchPageRepository searchPageRepository;
 
     public Customer findById(String id) throws CustomerNotFoundException {
         return customerRepository.findById(id)
@@ -30,5 +41,13 @@ public class CustomerService {
             throw new IncompleteCustomerException("The customer must have a name.");
         }
         return customerRepository.save(customer);
+    }
+
+    public Slice<Customer> sliceNameResult(Pageable pageable, String name) {
+        return searchRepository.findByName(name,pageable);
+    }
+
+    public Page<Customer> pageNameResult(Pageable pageable, String name) {
+        return searchPageRepository.findByName(name,pageable);
     }
 }

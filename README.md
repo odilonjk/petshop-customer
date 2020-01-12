@@ -5,7 +5,9 @@
 ---
 
 ### This project uses
-
 * JDK 11
 * Spring 2
 * Gradle 6
+
+## This project depends
+* Database mongoDB
