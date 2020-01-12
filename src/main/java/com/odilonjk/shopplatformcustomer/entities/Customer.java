@@ -9,18 +9,14 @@ import javax.persistence.GeneratedValue;
 
 import javax.validation.Valid;
 import java.util.Objects;
-import java.util.UUID;
 
 public class Customer {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(name = "id", updatable = false, nullable = false)
-    private UUID id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", columnDefinition = "VARCHAR(255)")
+    private String id;
 
     @Valid
     private String name;
@@ -34,17 +30,17 @@ public class Customer {
         this.phone = phone;
     }
 
-    public Customer(UUID id, @Valid String name, String phone) {
+    public Customer(String id, @Valid String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 

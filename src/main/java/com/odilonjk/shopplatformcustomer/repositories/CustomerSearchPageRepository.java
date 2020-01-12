@@ -7,7 +7,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.UUID;
 
-public interface CustomerSearchPageRepository extends PagingAndSortingRepository<Customer, UUID> {
+public interface CustomerSearchPageRepository extends PagingAndSortingRepository<Customer, String> {
 
     Page<Customer> findByName(String name, Pageable pageable);
 }

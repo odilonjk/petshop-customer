@@ -28,7 +28,7 @@ public class CustomerService {
     @Autowired
     private CustomerSearchPageRepository searchPageRepository;
 
-    public Customer findById(UUID id) throws CustomerNotFoundException {
+    public Customer findById(String id) throws CustomerNotFoundException {
         return customerRepository.findById(id)
                 .orElseThrow(() -> new CustomerNotFoundException("Customer not found with id: " + id));
     }
