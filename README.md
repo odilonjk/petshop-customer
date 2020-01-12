@@ -22,7 +22,7 @@
 
 #### Database
 
-In order to run this project, you need to run a MongoDB on `localhost:27017` or you can change it on `application.properties` file. 
+In order to run this project, you need to run a MongoDB on `mongodb:27017` or you can change it on `application.properties` file. 
 
 ---
 
