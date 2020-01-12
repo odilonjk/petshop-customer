@@ -1,8 +1,8 @@
-package com.odilonjk.petshopcustomer.resources;
+package com.odilonjk.shopplatformcustomer.resources;
 
-import com.odilonjk.petshopcustomer.entities.Customer;
-import com.odilonjk.petshopcustomer.repositories.CustomerRepository;
-import com.odilonjk.petshopcustomer.services.CustomerService;
+import com.odilonjk.shopplatformcustomer.entities.Customer;
+import com.odilonjk.shopplatformcustomer.repositories.CustomerRepository;
+import com.odilonjk.shopplatformcustomer.services.CustomerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

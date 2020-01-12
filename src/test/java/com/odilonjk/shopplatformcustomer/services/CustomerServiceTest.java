@@ -1,9 +1,9 @@
-package com.odilonjk.petshopcustomer.services;
+package com.odilonjk.shopplatformcustomer.services;
 
-import com.odilonjk.petshopcustomer.entities.Customer;
-import com.odilonjk.petshopcustomer.exceptions.CustomerNotFoundException;
-import com.odilonjk.petshopcustomer.exceptions.IncompleteCustomerException;
-import com.odilonjk.petshopcustomer.repositories.CustomerRepository;
+import com.odilonjk.shopplatformcustomer.entities.Customer;
+import com.odilonjk.shopplatformcustomer.exceptions.CustomerNotFoundException;
+import com.odilonjk.shopplatformcustomer.exceptions.IncompleteCustomerException;
+import com.odilonjk.shopplatformcustomer.repositories.CustomerRepository;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,6 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerServiceTest {
 
-    public static final int THREE_CUSTOMERS = 3;
     @InjectMocks
     private CustomerService customerService;
 
@@ -49,7 +48,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    public void shouldFindCustomersByName_whenThereIsCustomersWithNameAlikeOnDatabase() throws CustomerNotFoundException {
+    public void shouldFindCustomersByName_whenThereIsCustomersWithNameAlikeOnDatabase() {
         var id1 = "a1B2c3";
         var id2 = "a2B2c3";
         var id3 = "a3B2c3";
@@ -69,7 +68,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    public void shouldNotFindCustomersByName_whenThereIsNoCustomersWithNameAlikeOnDatabase() throws CustomerNotFoundException {
+    public void shouldNotFindCustomersByName_whenThereIsNoCustomersWithNameAlikeOnDatabase() {
         when(customerRepository.findByNameIgnoreCaseContaining("tester"))
                 .thenReturn(Lists.emptyList());
 

@@ -1,4 +1,4 @@
-package com.odilonjk.petshopcustomer.entities;
+package com.odilonjk.shopplatformcustomer.entities;
 
 
 import org.springframework.data.annotation.Id;

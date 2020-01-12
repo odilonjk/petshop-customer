@@ -1,9 +1,9 @@
-package com.odilonjk.petshopcustomer.resources;
+package com.odilonjk.shopplatformcustomer.resources;
 
-import com.odilonjk.petshopcustomer.entities.Customer;
-import com.odilonjk.petshopcustomer.exceptions.CustomerNotFoundException;
-import com.odilonjk.petshopcustomer.exceptions.IncompleteCustomerException;
-import com.odilonjk.petshopcustomer.services.CustomerService;
+import com.odilonjk.shopplatformcustomer.entities.Customer;
+import com.odilonjk.shopplatformcustomer.exceptions.CustomerNotFoundException;
+import com.odilonjk.shopplatformcustomer.exceptions.IncompleteCustomerException;
+import com.odilonjk.shopplatformcustomer.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

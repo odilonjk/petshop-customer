@@ -1,6 +1,6 @@
-package com.odilonjk.petshopcustomer.repositories;
+package com.odilonjk.shopplatformcustomer.repositories;
 
-import com.odilonjk.petshopcustomer.entities.Customer;
+import com.odilonjk.shopplatformcustomer.entities.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
