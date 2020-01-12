@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 group = 'com.odilonjk'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.0'
 sourceCompatibility = '11'
 repositories {
 	mavenCentral()
@@ -20,4 +20,9 @@ dependencies {
 }
 test {
 	useJUnitPlatform()
+}
+
+bootJar {
+	mainClassName = 'com.odilonjk.shopplatformcustomer.Application'
+	archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
 }
