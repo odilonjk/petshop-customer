@@ -1,0 +1,14 @@
+### Create a new customer.
+POST http://localhost:8080/customer
+Content-Type: application/json
+
+{
+    "name": "First Customer",
+	"phone": "+55 (11) 1234-5678"
+}
+
+### Find a single customer by id.
+GET http://localhost:8080/customer/5e1b953597702b3ccad70e0c
+
+### Find a list of customers that contains that name.
+GET http://localhost:8080/customer/name/Customer
